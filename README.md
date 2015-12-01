@@ -5,7 +5,7 @@ Extremely easy to use UI Transitions which make your code more readable and neat
 Managing your UI menus can get pretty complicated and messy, whenever you want to enable/disable a menu you need to have a reference to it, you can get reference by assigning each menu manually to a specific var, but soon you create too many vars to keep track of them. You can use gameObject.Find... but that is often slow to use if you have a lot of menus to manage (also code get's long pretty soon since you have to create reference to each menu). So this was annoying me and I decided to write a system that you can use to easily manipulate a lot of menus and have good control over transitions.
 
 
-How to use it:
+<b>How to use it:</b>
 
 1. Add UITransitions script to MainCamera (or any other GO that is always enabled)
 2. Create UI canvas
@@ -41,7 +41,8 @@ public class T_Instant : MonoBehaviour {
 
 Here is example of the most simple transitions which instantly snaps value to either disabled or enabled. Try building on that.
 
-TO-DO List:
+<b>TO-DO List:</b>
+
 1. Example scene.
 2. Different transitions on "rollout" and "rollin".
 3. Simplified dynamic adding of transitions
