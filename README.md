@@ -43,9 +43,13 @@ Here is example of the most simple transitions which instantly snaps value to ei
 
 <b>TO-DO List:</b>
 
-1. Example scene.
+1. Improve example scene.
 2. Different transitions on "rollout" and "rollin".
 3. Simplified dynamic adding of transitions
 4. Marking transitions as one time use
+5. Add comments, explanations and documentation.
+
+<b>How to use it:</b>
+Copy the whole folder somwehere inside your assets folder in the project you want to use it in.
 
 
