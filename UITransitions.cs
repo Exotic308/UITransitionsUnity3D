@@ -23,14 +23,21 @@ public class UITransitions : MonoBehaviour {
         } else Debug.LogError("UIParent is null, please point to it and restart the game.");
 	}
 
-	public static void SetActive(string name, bool state){
+    
+    public static void SetOnlyActive(string name) { SetActive(name, true, true); }
+
+    public static void SetActive(string name, bool state) { SetActive(name, state, false); }
+    public static void SetActive(string name, bool state, bool only){
+        bool check = false;
 		for(int i = 0; i < multiCanvas.Count; i++){
 			if(name == names[i]){
+                multiCanvas[i].SetActive(true);
                 multiCanvas[i].SendMessage("SetActive", state);
-                return;
-			}	
-		}
-
+                check = true;
+                if(!only) return;
+			} else if(only && multiCanvas[i].active) multiCanvas[i].SendMessage("SetActive", false);
+        }
+        if (check) return;
         double closest = 0;
         int index = 0;
         for(int i = 0; i < multiCanvas.Count; i++){
@@ -44,5 +51,7 @@ public class UITransitions : MonoBehaviour {
         if(closest == 0) Debug.LogError("UILib could not find menu by name : " + name);
         else Debug.LogError("UILib could not find menu by name : " + name + ", did you think : " + names[index]);
     }
+    
+    
 
 }
